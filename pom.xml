@@ -34,5 +34,11 @@
             <name>My Public Maven Repository on Repsy</name>
             <url>https://repo.repsy.io/mvn/nuricanozturk/nucleus</url>
         </repository>
+
+        <repository>
+            <id>repsy-unit-test</id>
+            <name>My Private Maven Repository on Repsy</name>
+            <url>https://repo.repsy.io/mvn/nuricanozturk/unit-test-framework</url>
+        </repository>
     </repositories>
 </project>
