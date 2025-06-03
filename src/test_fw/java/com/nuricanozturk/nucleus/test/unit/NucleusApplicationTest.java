@@ -1,7 +1,6 @@
 package com.nuricanozturk.nucleus.test.unit;
 
 import com.nuricanozturk.nucleus.NucleusApplication;
-import com.nuricanozturk.nucleus.annotation.Component;
 import com.nuricanozturk.nucleus.annotation.ComponentScan;
 import com.nuricanozturk.nucleus.annotation.EntryPoint;
 
@@ -10,7 +9,6 @@ import nuricanozturk.dev.app.TestFrameworkApp;
 import nuricanozturk.dev.display.DisplayType;
 
 @TestFrameworkApplication
-@Component
 @ComponentScan(basePackages = "com.nuricanozturk.nucleus.test.unit")
 @EntryPoint
 public class NucleusApplicationTest {

@@ -4,14 +4,14 @@ import com.nuricanozturk.nucleus.NucleusApplication;
 import com.nuricanozturk.nucleus.annotation.Component;
 import com.nuricanozturk.nucleus.annotation.EntryPoint;
 import com.nuricanozturk.nucleus.annotation.NucleusFramework;
+import org.jetbrains.annotations.NotNull;
 
 @NucleusFramework
 @EntryPoint("start")
-@Component
 public class Main {
-  private final App app;
+  private final @NotNull App app;
 
-  public Main(final App app) {
+  public Main(final @NotNull App app) {
     this.app = app;
   }
 

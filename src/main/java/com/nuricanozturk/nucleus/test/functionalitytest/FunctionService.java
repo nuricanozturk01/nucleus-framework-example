@@ -18,12 +18,12 @@ public class FunctionService {
           recover = "recoverMethod",
           backOff = @BackOff(delay = 1000, multiplier = 2))
   public void retryableMethod() {
-    attempt++;
-    System.out.println("Attempt: " + attempt);
-    if (attempt <= 5) {
-      throw new MyException("Failing attempt " + attempt);
+    this.attempt++;
+    System.out.println("Attempt: " + this.attempt);
+    if (this.attempt <= 5) {
+      throw new MyException("Failing attempt " + this.attempt);
     }
-    System.out.println("Success on attempt " + attempt);
+    System.out.println("Success on attempt " + this.attempt);
   }
 
   @Recover

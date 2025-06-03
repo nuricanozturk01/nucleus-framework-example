@@ -4,24 +4,28 @@ import com.nuricanozturk.nucleus.annotation.Component;
 import com.nuricanozturk.nucleus.test.di.NamedBeanComponentTestTwo;
 import com.nuricanozturk.nucleus.test.di.NamedComponentTest;
 import com.nuricanozturk.nucleus.test.functionalitytest.FunctionService;
+import org.jetbrains.annotations.NotNull;
 
 @Component
 public class App {
-  private final FunctionService functionService;
-  private final NamedBeanComponentTestTwo namedBeanComponentTestTwo;
-  private final NamedComponentTest namedComponentTest;
+  private final @NotNull FunctionService functionService;
+  private final @NotNull NamedBeanComponentTestTwo namedBeanComponentTestTwo;
+  private final @NotNull NamedComponentTest namedComponentTest;
 
-  public App(FunctionService functionService, NamedBeanComponentTestTwo namedBeanComponentTestTwo, NamedComponentTest namedComponentTest) {
+  public App(
+      final @NotNull FunctionService functionService,
+      final @NotNull NamedBeanComponentTestTwo namedBeanComponentTestTwo,
+      final @NotNull NamedComponentTest namedComponentTest) {
     this.functionService = functionService;
     this.namedBeanComponentTestTwo = namedBeanComponentTestTwo;
     this.namedComponentTest = namedComponentTest;
   }
 
   public void run() {
-    functionService.retryableMethod();
+    this.namedBeanComponentTestTwo.write();
     System.out.println("---------------------");
-    namedBeanComponentTestTwo.write();
+    this.namedComponentTest.write();
     System.out.println("---------------------");
-    namedComponentTest.write();
+    this.functionService.retryableMethod();
   }
 }
